@@ -1,0 +1,21 @@
+[submodule "lambdify-core"]
+	path = lambdify-core
+	url = git@github.com:lambdify/lambdify-core.git
+[submodule "lambdify-apigateway-router"]
+	path = lambdify-apigateway-router
+	url = git@github.com:lambdify/lambdify-apigateway-router.git
+[submodule "lambdify-boilerplates"]
+	path = lambdify-boilerplates
+	url = git@github.com:lambdify/lambdify-boilerplates.git
+[submodule "lambdify-aws-clients"]
+	path = lambdify-aws-clients
+	url = git@github.com:lambdify/lambdify-aws-clients.git
+[submodule "lambdify-jsoniter"]
+	path = lambdify-jsoniter
+	url = git@github.com:lambdify/lambdify-jsoniter.git
+[submodule "lambdify-aws-events"]
+	path = lambdify-aws-events
+	url = git@github.com:lambdify/lambdify-aws-events.git
+[submodule "lambdify-jackson"]
+	path = lambdify-jackson
+	url = git@github.com:lambdify/lambdify-jackson.git
