@@ -32,7 +32,6 @@ bump(){
   read should_continue
 
   git submodule foreach $SCRIPT bump-submodule-version $1 || exit_due_to_failure
-  git submodule foreach git status
   echo
   push_changes $1
 
