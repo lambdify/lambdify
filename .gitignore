@@ -1,0 +1,8 @@
+output
+target
+*.class
+*.iml
+.idea
+.classpath
+.project
+
