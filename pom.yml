@@ -1,0 +1,19 @@
+# The chosen project's boilerplates as parent
+parent: { groupId: io.skullabs.boilerplates, artifactId: kotlin-1.2, version: 1.0.0 }
+
+# Project definition
+modelVersion: 4.0.0
+groupId: org.lambdify
+artifactId: lambdify-deployment-parent
+version: 0.7.2.Final
+packaging: pom
+
+modules:
+ - "lambdify-aws-events"
+ - "lambdify-aws-clients"
+ - "lambdify-core"
+ - "lambdify-apigateway-router"
+ - "lambdify-jackson"
+ - "lambdify-jsoniter"
+ - "lambdify-boilerplates"
+
