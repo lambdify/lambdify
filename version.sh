@@ -22,6 +22,14 @@ error(){
 }
 
 bump(){
+  bump_new_version $1
+  echo
+  push_changes $1
+  echo "$1" > $VERSION_FILE
+  info "Finished"
+}
+
+bump_new_version(){
   if [ ! "$#" = "1" ]; then
     $SCRIPT; exit 1
   fi
@@ -32,14 +40,10 @@ bump(){
   read should_continue
 
   git submodule foreach $SCRIPT bump-submodule-version $1 || exit_due_to_failure
-  echo
-  push_changes $1
-
-  echo "$1" > $VERSION_FILE
-  info "Finished"
+  sed -i -e "s/${VERSION}/$1/" pom.yml
 }
 
-bump_new_version(){
+bump_submodule_version(){
   ensure_submodule_is_at_last_version
   update_pom_files $1
 }
@@ -104,7 +108,7 @@ VERSION=`cat ${VERSION_FILE}`
 
 # MAIN
 case "$1" in
-  "bump-submodule-version") bump_new_version $2 ;;
+  "bump-submodule-version") bump_submodule_version $2 ;;
   "push-submodule-changes") push_submodule_changes $2 ;;
   "clean-submodule-changes" ) clean_up_submodule ;;
   "bump") bump $2 ;;
