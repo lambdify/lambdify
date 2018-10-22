@@ -40,7 +40,7 @@ bump_new_version(){
   read should_continue
 
   git submodule foreach $SCRIPT bump-submodule-version $1 || exit_due_to_failure
-  sed -i -e "s/${VERSION}/$1/" pom.yml
+  sed -i -e "s/${VERSION}/$1/" pom.yml version.dat
 }
 
 bump_submodule_version(){
